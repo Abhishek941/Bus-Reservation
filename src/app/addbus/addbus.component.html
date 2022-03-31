@@ -1,0 +1,75 @@
+<html>
+    <body>
+        <nav>
+
+            <ul class="ull">
+                <ul>
+                    <li class="menu1"><a routerLink="/addbus">Add Bus</a></li>
+                    <li><a routerLink="/admindash" >Booking Details</a></li>
+                    <li><a routerLink="/bus" >Bus Details</a></li>
+                    <li class="lii"><a (click)="logout1()" >Logout</a></li>
+                  </ul>
+            </ul>
+
+        </nav>
+    </body>
+
+    <div class="res">
+        <h1>Add Bus</h1>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <p for="bus">Bus Name</p>
+            <input type="text" placeholder="Enter Bus Name" formControlName="bus">
+            <div *ngIf="f['bus'].touched && f['bus'].invalid" class="alert alert-danger">
+                <div *ngIf="f['bus'].errors && f['bus'].errors['required']">Bus Name is required.</div>
+                <div *ngIf="f['bus'].errors && f['bus'].errors['pattern']">Name should contains only alphabets.</div>
+                <div *ngIf="f['bus'].errors && f['bus'].errors['maxlength']">Name should not exceed 15 characters</div>
+            </div>
+            <p for="ser">Service NO</p>
+            <input type="text" placeholder="Enter Service NO" formControlName="ser">
+            <div *ngIf="f['ser'].touched && f['ser'].invalid" class="alert alert-danger">
+                <div *ngIf="f['ser'].errors && f['ser'].errors['required']">Service Number is required.</div>
+                <div *ngIf="f['ser'].errors && f['ser'].errors['pattern']">Service number only contain numbers</div>
+                <div *ngIf="f['ser'].errors && f['ser'].errors['maxlength']">Servive number should be 5 digits</div>
+                <div *ngIf="f['ser'].errors && f['ser'].errors['minlength']">Servive number should be 5 digits</div>
+            </div>
+            <p for="sou">Source</p>
+            <input type="text" placeholder="Enter Source" formControlName="sou">
+            <div *ngIf="f['sou'].touched && f['sou'].invalid" class="alert alert-danger">
+                <div *ngIf="f['sou'].errors && f['sou'].errors['required']">Source is required.</div>
+                <div *ngIf="f['sou'].errors && f['sou'].errors['pattern']">Source should contains only alphabets.</div>
+            </div>
+            <p for="des">Destination</p>
+            <input type="text" placeholder="Enter Destination" formControlName="des">
+            <div *ngIf="f['des'].touched && f['des'].invalid" class="alert alert-danger">
+                <div *ngIf="f['des'].errors && f['des'].errors['required']">Destination is required.</div>
+                <div *ngIf="f['des'].errors && f['des'].errors['pattern']">Destination should contains only alphabets.</div>
+            </div>
+            <p for="date">Date</p>
+            <input type="date" min="{{currentDate | date:'yyyy-MM-dd'}}" placeholder="Enter date" formControlName="date">
+            <div *ngIf="f['date'].touched && f['date'].invalid" class="alert alert-danger">
+                <div *ngIf="f['date'].errors && f['date'].errors['required']">Date is required.</div>
+            </div>
+            <p for="arr">Arrival Time</p>
+            <input type="time" placeholder="Enter Time" formControlName="arr">
+            <div *ngIf="f['arr'].touched && f['arr'].invalid" class="alert alert-danger">
+                <div *ngIf="f['arr'].errors && f['arr'].errors['required']">Arrival Time is required.</div> 
+            </div>
+            <p for="dep">Departure Time</p>
+            <input type="time" placeholder="Enter Time" formControlName="dep">
+            <div *ngIf="f['dep'].touched && f['dep'].invalid" class="alert alert-danger">
+                <div *ngIf="f['dep'].errors && f['dep'].errors['required']">Departure Time is required.</div> 
+            </div>
+            <p for="pri">Price</p>
+            <input type="number" placeholder="Enter Price" formControlName="pri">
+            <div *ngIf="f['pri'].touched && f['pri'].invalid" class="alert alert-danger">
+                <div *ngIf="f['pri'].errors && f['pri'].errors['required']">Price is required.</div> 
+            </div>
+            <p for="type">Type</p>
+            <input type="text" placeholder="Enter Type (AC/NON-Ac)" formControlName="type">
+            <div *ngIf="f['type'].touched && f['type'].invalid" class="alert alert-danger">
+                <div *ngIf="f['type'].errors && f['type'].errors['required']">Type is required.</div> 
+            </div>
+            <button type="submit" [disabled]="form.invalid">Add</button>
+        </form>
+   </div>
+</html>

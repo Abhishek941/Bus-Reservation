@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Admin</title>
+    </head>
+    <body>
+        <br><br><br><br><br><br><br>
+       <div class="admin">
+            <h1>Admin Login</h1>
+            <form  [formGroup]="form" (ngSubmit)="Submit()">
+
+                <p for="id">Email ID</p>
+                <input type="text" placeholder="Enter Admin ID" formControlName="id">
+                <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['id'].errors && f['id'].errors['required']">Email id is required.</div>
+                    <div *ngIf="f['id'].errors && f['id'].errors['email']">Enter valid Email Address</div>
+                </div>
+                
+                <p for="pass">Password</p>
+                <input type="password" placeholder="Enter Password" formControlName="pass" >
+                <div *ngIf="f['pass'].touched && f['pass'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['pass'].errors && f['pass'].errors['required']">Password is required.</div>
+                </div>
+            
+                <button type="submit" [disabled]="form.invalid">Login</button>
+
+            </form>
+       </div>
+    </body>
+</html>

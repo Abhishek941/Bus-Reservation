@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+
+    
+    <body>
+     
+        <br><br><br><br><br><br><br>
+       <div class="login">
+            <h1> User Login</h1>
+            <form  [formGroup]="form" (ngSubmit)="Submit()">
+
+                <p for="email">Email ID</p>
+                <input type="email" placeholder="Enter Email ID" formControlName="email">
+                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                    <div *ngIf="f['email'].errors && f['email'].errors['email']">Enter valid Email Address</div>
+                </div>
+                
+
+                <p for="pass">Password</p>
+                <input type="password" placeholder="Enter Password" formControlName="pass" >
+                <div *ngIf="f['pass'].touched && f['pass'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['pass'].errors && f['pass'].errors['required']">Password is required.</div>
+                </div>
+                
+
+                <button type="submit" [disabled]="form.invalid">Login</button>
+
+                <h3>If You Are Admin - <a routerLink="/admin">Click Here</a></h3><br>
+
+                <h3>First Time User?<a routerLink="/register">Sign Up</a></h3><br>
+
+                
+            </form>
+       </div>
+    </body>
+</html>
+

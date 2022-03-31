@@ -1,0 +1,83 @@
+<html>
+  <body>
+
+    <nav>
+
+        <ul>
+          <li class="menu1"><a routerLink="/logindash">Dashboard</a></li>
+          <li ><a routerLink="/profile">Profile</a></li>
+          <li><a routerLink="/booking" >Booking Details</a></li>
+          <li class="lii"><a  (click)="logout()">Logout</a></li>
+        </ul>
+
+    </nav>   
+    
+    <div class="main">
+   
+      <h2>ONLINE BUS RESERVATION PORTAL</h2><br>
+    
+      <div class="abc">
+        <form [formGroup]="form" >
+  
+                <p for="from">From</p>
+                <input type="text" placeholder="Enter Source place" list="search" formControlName="from" [(ngModel)]="searchText">
+                <datalist id="search">
+                  <option value="Chennai">Chennai</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Goa">Goa</option>
+                </datalist>
+                
+            
+                <p for="to">To</p>
+                <input type="text" placeholder="Enter destination place" list="search1" formControlName="to" >
+                <datalist id="search1">
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Delhi">Delhi</option>
+                </datalist>
+                
+            
+                <p for="date">Date Of Journey</p>
+                <input type="date" min="{{currentDate | date:'yyyy-MM-dd'}}" formControlName="date" [(ngModel)]="searchText1"><br>
+              
+                <button type="submit" class="btn"  (click)="display()"> Search for Bus </button>
+          </form>
+      </div>
+    </div>
+    <form  (ngSubmit)="Submit()">
+
+    <div *ngIf="!isDisplay" >
+              <h1>Bus Details</h1>
+                <table id="t10" border="1">
+            <tr>
+                <th scope="col">BusName</th>
+                <th scope="col">ServiceNo</th>
+                <th scope="col">Source</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Date</th>
+                <th scope="col">Arrivaltime</th>
+                <th scope="col">Departuretime</th>
+                <th scope="col">Price</th>
+                <th scope="col">Type</th>
+                <th scope="col"></th>
+            </tr>
+            <tr *ngFor="let a of data1 | filter:searchText |filter:searchText1">
+                <td scope="row">{{a.busname}}</td>
+                <td>{{a.serviceno}}</td>
+                <td>{{a.source}}</td>
+                <td>{{a.destination}}</td>
+                <td>{{a.date}}</td>
+                <td>{{a.arrivaltime}}</td>
+                <td>{{a.departuretime}}</td>
+                <td>{{a.price}}</td>
+                <td>{{a.type}}</td>
+                <td><button type="submit" [disabled]="form.invalid">View Seats</button></td>
+            </tr>
+        </table> 
+    </div>
+
+  </form>
+    
+  </body>
+
+  </html>

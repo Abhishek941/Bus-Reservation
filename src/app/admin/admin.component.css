@@ -1,0 +1,51 @@
+*
+{
+    padding: 0;
+    margin: 0;
+
+}
+body
+{
+    background: url('https://media.istockphoto.com/photos/white-bus-traveling-on-the-asphalt-road-around-line-of-trees-in-rural-picture-id1154164634?k=20&m=1154164634&s=612x612&w=0&h=iK0IhiUtj0Fxc7kUdyJTYDYPg-3seTBkLfpkyqxzz0g=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 40%;
+}
+.admin
+{
+    width:350px;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+h1{
+    font-size: 40px;
+    text-align: center;
+    margin: 40px 0;
+}
+p{
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 15px 0;
+
+}
+input
+{
+    font-size: 16px;
+    width:100%;
+    padding:15px 10px;
+  
+
+    border-radius: 5px;
+    }
+button
+    {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px 15px;
+    width: 50%;
+    border-radius: 5px;
+   
+}

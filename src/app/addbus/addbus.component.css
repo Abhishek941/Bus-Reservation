@@ -1,0 +1,93 @@
+nav
+{
+	width: 100%;
+	height: 75px;
+	background-color: rgb(0, 139, 132);
+	line-height: 75px;
+	padding:10px 100px;
+	position:fixed;
+	z-index: 1;
+}
+
+
+ul
+{
+	padding-left: 200px;
+}
+ 
+li
+{
+	display: inline-block;
+	list-style: none;
+}
+ 
+a
+{
+	color:#fff;
+	text-decoration: none;
+	font-size: 18px;
+	padding:0px 32px;
+}
+a:hover
+{
+	color:#c0d96f;
+}
+
+*{
+	margin:0px;
+	padding:0px;
+
+}
+
+
+.lii
+{
+	padding-left: 350px;
+}
+
+body
+{
+    background-image: url('https://coolwallpapers.me/picsup/5749739-bus-wallpapers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 70%;
+}
+
+
+.res
+{
+    width:350px;
+    top: 55%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    padding-top: 450px;
+}
+h1{
+    font-size: 30px;
+    text-align: center;
+    margin: 40px 0;
+}
+p{
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 15px 0;
+
+}
+input
+{
+    font-size: 16px;
+    width:100%;
+    padding:10px 10px;
+    border-radius: 5px;
+    }
+button
+    {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px 15px;
+    width: 50%;
+    border-radius: 5px;
+   
+}

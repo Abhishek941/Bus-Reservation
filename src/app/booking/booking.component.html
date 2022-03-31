@@ -1,0 +1,50 @@
+<html>
+  <body>
+
+    <nav>
+
+      <ul>
+        <li class="menu1"><a routerLink="/logindash">Dashboard</a></li>
+        <li ><a routerLink="/profile">Profile</a></li>
+        <li><a routerLink="/booking" >Booking Details</a></li>
+        <li class="lii"><a (click)="logout()" >Logout</a></li>
+      </ul>
+
+    </nav> 
+    
+    <div class="book">
+        <h1>Booking Details</h1><br><br>
+            <table id="t10" border="1">
+                <tr>
+                    <th scope="col">Bus Name</th>
+                    <th scope="col">Service NO</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Arrival Time</th>
+                    <th scope="col">Seat Number</th>
+                    <th scope="col">Passenger Name</th>
+                    <th scope="col">Email Id</th>
+                    <th scope="col">Mobile number</th>
+                    <th scope="col"></th>
+                </tr>
+                <tr >
+                        <td scope="row">{{p}}</td>
+                        <td>{{m}}</td>
+                        <td>{{q}}</td>
+                        <td>{{r}}</td>
+                        <td>{{k}}</td>
+                        <td>{{l}}</td>
+                        <td>{{s}}</td>
+                        <td>{{t}}</td>
+                        <td>{{u}}</td>
+                        <td>{{v}}</td>
+                        <td><button type="submit" (click)="onDelete(s)">Cancel</button></td>
+        
+                </tr>
+     
+
+            </table> 
+    </div>
+  </body>
+</html>

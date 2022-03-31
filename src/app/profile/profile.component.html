@@ -1,0 +1,36 @@
+<html>
+  <body>
+
+    <nav>
+
+      <ul>
+        <li class="menu1"><a routerLink="/logindash">Dashboard</a></li>
+        <li ><a routerLink="/profile">Profile</a></li>
+        <li><a routerLink="/booking" >Booking Details</a></li>
+        <li class="lii"><a (click)="logout()">Logout</a></li>
+      </ul>
+
+    </nav>  
+
+
+
+        <div class="res"  >
+            <h1>User Details</h1><br>
+          <table id="t10" border="1">
+            <tr>
+              <th>Full Name</th>
+              <td>{{message1}}</td>
+            </tr>
+            <tr>
+              <th>Email ID</th>
+              <td>{{message2}}</td>
+            </tr>
+            <tr>
+              <th>Mobile Number</th>
+              <td>{{message3}}</td>
+            </tr>
+          </table>
+        </div>
+</body>
+
+</html>

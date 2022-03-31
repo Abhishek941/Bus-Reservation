@@ -1,0 +1,45 @@
+<html>
+    <body>
+        <nav>
+            <ul class="ull">
+                <ul>
+                    <li class="menu1"><a routerLink="/addbus">Add Bus</a></li>
+                    <li><a routerLink="/admindash" >Booking Details</a></li>
+                    <li><a routerLink="/bus" >Bus Details</a></li>
+                    <li class="lii"><a (click)="logout1()" >Logout</a></li>
+                  </ul>
+            </ul>
+
+        </nav>
+
+        <div class="bus">
+            <h1>Bus Details</h1><br><br>
+                <table id="t10" border="1">
+            <tr>
+                <th scope="col">BusName</th>
+                <th scope="col">ServiceNo</th>
+                <th scope="col">Source</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Date</th>
+                <th scope="col">Arrivaltime</th>
+                <th scope="col">Departuretime</th>
+                <th scope="col">Price</th>
+                <th scope="col">Type</th>
+                <th scope="col"></th>
+            </tr>
+            <tr *ngFor="let a of data1" >
+                <td scope="row">{{a.busname}}</td>
+                <td>{{a.serviceno}}</td>
+                <td>{{a.source}}</td>
+                <td>{{a.destination}}</td>
+                <td>{{a.date}}</td>
+                <td>{{a.arrivaltime}}</td>
+                <td>{{a.departuretime}}</td>
+                <td>{{a.price}}</td>
+                <td>{{a.type}}</td>
+                <td><button type="submit" (click)="onDelete(a.serviceno)">Delete</button></td>
+            </tr>
+        </table> 
+        </div>
+    </body>
+</html>

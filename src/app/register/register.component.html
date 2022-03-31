@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Registration</title>
+    </head>
+    <body>
+       <div class="res">
+            <h1>Registration</h1>
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <p for="full">Full Name</p>
+                <input type="text" placeholder="Enter Full Name" formControlName="full">
+                <div *ngIf="f['full'].touched && f['full'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['full'].errors && f['full'].errors['required']">Full Name is required.</div>
+                    <div *ngIf="f['full'].errors && f['full'].errors['pattern']">Name should not contains numbers and special characters.</div>
+                    <div *ngIf="f['full'].errors && f['full'].errors['maxlength']">Name should not exceed 30 characters</div>
+                </div>
+                <p for="email">Email ID</p>
+                <input type="email" placeholder="Enter Email ID" formControlName="email">
+                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                    <div *ngIf="f['email'].errors && f['email'].errors['email']">Enter valid Email Address</div>
+                </div>
+                <p for="pass">Create Password</p>
+                <input type="password" placeholder="Enter Password" formControlName="pass">
+                <div *ngIf="f['pass'].touched && f['pass'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['pass'].errors && f['pass'].errors['required']">Password is required.</div>
+                    <div *ngIf="f['pass'].errors && f['pass'].errors['pattern']">Password length should be atleast 8<br> and contains atleast one uppercase,one lowercase,one numeric value<br>one special character.</div>
+                </div>
+                <p for="cpass">Confirm Password</p>
+                <input type="password" placeholder="Enter Password" formControlName="cpass">
+                <div *ngIf="f['cpass'].touched && f['cpass'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['cpass'].errors && f['cpass'].errors['required']">Confirm Password is required.</div>
+                    <div *ngIf="f['cpass'].errors && f['cpass'].errors['confirmedValidator']">Password and confirm Password must be same.</div>
+                </div>
+                <p for="mob">Mobile Number</p>
+                <input type="text" placeholder="Enter Number" formControlName="mob">
+                <div *ngIf="f['mob'].touched && f['mob'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['mob'].errors && f['mob'].errors['required']">Mobile number is required.</div>
+                    <div *ngIf="f['mob'].errors && f['mob'].errors['pattern']">Mobile number should be numbers only</div>
+                    <div *ngIf="f['mob'].errors && f['mob'].errors['minlength']">Mobile number should be 10 digits</div>
+                    <div *ngIf="f['mob'].errors && f['mob'].errors['maxlength']">mobile number should be 10 digits</div>
+                </div>
+                <button type="submit" [disabled]="form.invalid">Register</button>
+            </form>
+       </div>
+    </body>
+</html>
+

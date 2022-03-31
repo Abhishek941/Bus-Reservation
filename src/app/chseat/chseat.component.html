@@ -1,0 +1,162 @@
+<html >
+  
+  <body>
+
+  <nav>
+
+    <ul>
+      <li id="abc"class="menu1">Seat Avaliability</li>
+      <li id="abc" class="lii"><a (click)="logout()">Logout</a></li>
+    </ul>
+
+  </nav> 
+
+  <div class="hello">
+    <ul class="showcase">
+      <li>
+        <button class="seat1" ></button>
+        <label>Avaliable</label>
+      </li>
+
+      <li>
+        <button class="seat2" [disabled]="isDisable" ></button>
+        <label>Booked</label>
+      </li>
+    </ul>
+
+    <div class="container">
+    
+      <div class="row">
+      
+        <button class="seat" [disabled]="isDisableA1" >A1</button>
+        <button class="seat" [disabled]="isDisableA2" >A2</button>
+        <button class="seat" [disabled]="isDisableA3">A3</button>
+        <button class="seat" [disabled]="isDisableA4">A4</button>
+        <button class="seat" [disabled]="isDisableA5">A5</button>
+        <button class="seat" [disabled]="isDisableA6">A6</button>
+        <button class="seat" [disabled]="isDisableA7">A7</button>
+        <button class="seat"[disabled]="isDisableA8">A8</button>
+        <button class="seat"[disabled]="isDisableA9">A9</button>
+       
+      </div>
+      <div class="row">
+  
+        <button class="seat" [disabled]="isDisableA10">A10</button>
+        <button class="seat" [disabled]="isDisableA11">A11</button>
+        <button class="seat" [disabled]="isDisableA12">A12</button>
+        <button class="seat" [disabled]="isDisableA13">A13</button>
+        <button class="seat" [disabled]="isDisableA14">A14</button>
+        <button class="seat" [disabled]="isDisableA15">A15</button>
+        <button class="seat" [disabled]="isDisableA16">A16</button>
+        <button class="seat" [disabled]="isDisableA17">A17</button>
+        <button class="seat" [disabled]="isDisableA18">A18</button>
+      </div><br>
+
+      <div class="row">
+   
+        <button class="seat" [disabled]="isDisableA19">A19</button>
+        <button class="seat" [disabled]="isDisableA20">A20</button>
+        <button class="seat" [disabled]="isDisableA21">A21</button>
+        <button class="seat" [disabled]="isDisableA22">A22</button>
+        <button class="seat" [disabled]="isDisableA23">A23</button>
+        <button class="seat" [disabled]="isDisableA24">A24</button>
+        <button class="seat" [disabled]="isDisableA25">A25</button>
+        <button class="seat" [disabled]="isDisableA26">A26</button>
+        <button class="seat" [disabled]="isDisableA27">A27</button>
+      </div>
+
+      <div class="row">
+  
+        <button class="seat" [disabled]="isDisableA28">A28</button>
+        <button class="seat" [disabled]="isDisableA29">A29</button>
+        <button class="seat" [disabled]="isDisableA30">A30</button>
+        <button class="seat" [disabled]="isDisableA31">A31</button>
+        <button class="seat" [disabled]="isDisableA32">A32</button>
+        <button class="seat" [disabled]="isDisableA33">A33</button>
+        <button class="seat" [disabled]="isDisableA34">A34</button>
+        <button class="seat" [disabled]="isDisableA35">A35</button>
+        <button class="seat" [disabled]="isDisableA36">A36</button>
+      </div>
+
+ 
+  </div>
+  
+
+  </div>
+
+  <div class="res">
+    <h1>Enter Details</h1>
+            <form [formGroup]="form" (ngSubmit)="Submit()">
+              
+               
+                <p for="seat">Select Seat Number</p>
+                <input type="text"  formControlName="seat" list="search12">
+              <datalist id="search12">
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+                <option value="A4">A4</option>
+                <option value="A5">A5</option>
+                <option value="A6">A6</option>
+                <option value="A7">A7</option>
+                <option value="A8">A8</option>
+                <option value="A9">A9</option>
+                <option value="A10">A10</option>  
+                <option value="A11">A11</option>
+                <option value="A12">A12</option>
+                <option value="A13">A13</option>
+                <option value="A14">A14</option>
+                <option value="A15">A15</option>  
+                <option value="A16">A16</option>
+                <option value="A17">A17</option>
+                <option value="A18">A18</option>
+                <option value="A19">A19</option>
+                <option value="A20">A20</option>  
+                <option value="A21">A21</option>
+                <option value="A22">A22</option>
+                <option value="A23">A23</option>
+                <option value="A24">A24</option>
+                <option value="A25">A25</option>  
+                <option value="A26">A26</option>
+                <option value="A27">A27</option>
+                <option value="A28">A28</option>
+                <option value="A29">A29</option>
+                <option value="A30">A30</option>  
+                <option value="A31">A31</option>
+                <option value="A32">A32</option>
+                <option value="A33">A33</option>
+                <option value="A34">A34</option>
+                <option value="A35">A35</option> 
+                <option value="A36">A36</option>              
+              </datalist>
+                <div *ngIf="f['seat'].touched && f['seat'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['seat'].errors && f['seat'].errors['required']">seat number is required.</div> 
+              </div>
+
+              <p for="pasen">Enter Passenger name</p>
+                <input type="text"formControlName="pasen">
+                <div *ngIf="f['pasen'].touched && f['pasen'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['pasen'].errors && f['pasen'].errors['required']">Passenger name is required.</div> 
+                  <div *ngIf="f['pasen'].errors && f['pasen'].errors['pattern']">Name should not contains numbers and special characters.</div> 
+              </div>
+                
+                <p for="email">Email Id</p>
+                <input type="email" formControlName="email">
+                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div> 
+                    <div *ngIf="f['email'].errors && f['email'].errors['email']">Enter valid Email Address</div>
+                </div>
+                <p for="mob">Mobile Number</p>
+                <input type="text" placeholder="Enter Number" formControlName="mob">
+                <div *ngIf="f['mob'].touched && f['mob'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['mob'].errors && f['mob'].errors['required']">Mobile number is required.</div>
+                    <div *ngIf="f['mob'].errors && f['mob'].errors['pattern']">Mobile number should be numbers only</div>
+                    <div *ngIf="f['mob'].errors && f['mob'].errors['minlength']">Mobile number should be 10 digits</div>
+                    <div *ngIf="f['mob'].errors && f['mob'].errors['maxlength']">Mobile number should be 10 digits</div>
+                </div>
+                <button type="submit" [disabled]="form.invalid">Book</button>
+            </form>
+  </div>
+  
+  </body>
+</html>

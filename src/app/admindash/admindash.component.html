@@ -1,0 +1,47 @@
+<html>
+    <body>
+        <nav>
+
+            <ul>
+              <li class="menu1"><a routerLink="/addbus">Add Bus</a></li>
+              <li><a routerLink="/admindash" >Booking Details</a></li>
+              <li><a routerLink="/bus" >Bus Details</a></li>
+              <li class="lii"><a (click)="logout1()">Logout</a></li>
+            </ul>
+    
+        </nav> 
+
+        <div class="book">
+            <h1>Booking Details</h1><br><br>
+                <table id="t10" border="1">
+            <tr>
+                <th scope="col">Bus Name</th>
+                <th scope="col">Service NO</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Arrival Time</th>
+                    <th scope="col">Seat Number</th>
+                    <th scope="col">Passenger Name</th>
+                    <th scope="col">Email Id</th>
+                    <th scope="col">Mobile number</th>
+                    <th scope="col"></th>
+            </tr>
+            <tr *ngFor="let a of data1" >
+                <td scope="row">{{a.busname}}</td>
+                <td>{{a.serviceno}}</td>
+                <td>{{a.source}}</td>
+                <td>{{a.destination}}</td>
+                <td>{{a.date}}</td>
+                <td>{{a.arrivaltime}}</td>
+                <td>{{a.seatnumber}}</td>
+                <td>{{a.passengername}}</td>
+                <td>{{a.emailid}}</td>
+                <td>{{a.mobilenumber}}</td>
+                <td><button type="submit" (click)="onDelete(a.seatnumber)">Cancel</button></td>
+            </tr>
+        </table> 
+        </div>
+        
+    </body>
+</html>
